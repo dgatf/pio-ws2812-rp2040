@@ -26,7 +26,7 @@ extern "C"
 
 int64_t alarm_callback(alarm_id_t id, void *user_data)
 {
-    static uint8_t red, green, blue;
+    uint8_t red, green, blue;
     red = rand();
     green = rand();
     blue = rand();
