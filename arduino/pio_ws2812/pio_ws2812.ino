@@ -16,13 +16,7 @@
  * -------------------------------------------------------------------------------
  */
 
-extern "C"
-{
 #include "ws2812.h"
-}
-
-#include <stdlib.h>
-#include "pico/stdlib.h"
 
 int64_t alarm_callback(alarm_id_t id, void *user_data)
 {
