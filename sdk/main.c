@@ -17,11 +17,11 @@
  */
 
 #include <stdlib.h>
+
 #include "pico/stdlib.h"
 #include "ws2812.h"
 
-int64_t alarm_callback(alarm_id_t id, void *user_data)
-{
+int64_t alarm_callback(alarm_id_t id, void *user_data) {
     uint8_t red, green, blue;
     red = rand();
     green = rand();
@@ -30,15 +30,11 @@ int64_t alarm_callback(alarm_id_t id, void *user_data)
     return 500 * 1000;
 }
 
-int main()
-{
-    PIO pio = pio0; // values: pio0, pio1
+int main() {
+    PIO pio = pio0;  // values: pio0, pio1
     const uint WS2812_PIN = 16;
-
     ws2812_init(pio, WS2812_PIN, 800000);
     add_alarm_in_ms(500, alarm_callback, NULL, false);
-    
     while (1)
-    {
-    }
+        ;
 }
